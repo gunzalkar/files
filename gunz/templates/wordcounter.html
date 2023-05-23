@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVSX91SJ2W"></script>
+<meta name="robots" content="index, archive, follow">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVSX91SJ2W');
+</script>
+  <link rel="canonical" href="https://gunz-tools.com/tools/word-counter">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="This tool allows you to easily count the number of words, characters and sentences in a given piece of text.">
+  <meta name="keywords" content="Word count, count words, word counter, counter, count sentences, sentence counter, character counter">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='541-hand-washing-step-12-lineal.png')}}" sizes="192x192">
+  <title>Free Word Counter Tool | Count words & Sentences.</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+  
+<style>
+:root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: #2E8BC0;
+  --buttonBackground-color: #7EC8E3;
+  --legend-color: #0000FF;
+  --buttonHover-color: #202848;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --innerTextarea:#ffffff;
+}
+
+.dark-theme{
+  --backgroun-colour: #121212;
+  --navbar-color: #cd2d55;
+  --buttonBackground-color: #e18199;
+  --legend-color: #f0c0cc;
+  --buttonHover-color:  #e696aa;
+  --BlackWhite-color: white;
+  --BoxShadow-color:#2d2c2c;
+  --innerTextarea:#D3D3D3;
+
+}
+
+@media screen and (max-width:767px){
+	textarea {
+		font-size: 0.50em;
+		background: rgba(255,255,255,0.1);
+		border: none;
+		box-shadow: 0px -5px 10px 0px var(--BoxShadow-color);
+		border-collapse:collapse;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
+		border-right: 1px solid rgba(255,255,255,0.5);
+		border-radius: 5px;
+		backdrop-filter: blur(5px);
+		overflow: hidden;
+		line-height: 1.2;
+		resize: none;
+		overflow-y: auto;
+		font: 5vw;
+		margin: 0;
+		padding: 0;
+		padding-left: 10px; 
+		padding-top: 10px; 
+		border-color: #202848;
+		width: 95vw;
+		height: 50vw;
+	}
+	.question.textfieldbox {
+	  position: relative;
+	  top: 55vw;
+	  -webkit-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  transform: translateY(-50%);
+	  text-align: center;
+	}
+	
+	.typewriter h1 { 
+	  color:var(--navbar-color);
+	  -webkit-text-stroke: 1px var(--blackWhite-color); 
+	  font-weight: bold; 
+	  font-size:x-large;
+	  text-align:center;
+	}
+	
+	.sidediv{
+	  position: fixed; 
+	  left: 0%; 
+	  -webkit-transform: translate(0, 7vh);
+	  float:left;
+	  z-index:99999;  
+	  
+	}
+	
+	.navbar li a{
+	  font-size: 2vw;
+	  padding-right: 20px;
+	  text-decoration: none;
+	  color: white;
+	}
+	
+	h2{
+    padding: 2rem 1rem;
+    text-align: center;
+    color:var(--buttonBackground-color); 
+	font-size: 2vh;
+    
+}
+	p{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+	
+	#ad-slot { 
+    height: 250px;
+  }
+  #ad-slot2 { 
+    height: 250px;
+  }
+
+.navbar{
+	display: none;
+}
+.sidenav {
+padding-top: 15px;
+display: block;}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--navbar-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 10px 10px 20px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+  
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover {
+  color: black;
+  border-bottom: 2px solid var(--buttonBackground-color);;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+	
+
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main main main main main'
+	'main main main main main'
+	'right right right right right';
+  gap: 1px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.41);
+	border-radius: 30px;
+	box-shadow: 5px 5px 10px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  margin: 5px;
+}
+.item1{
+  height: 80px;
+}
+.item3{
+  height:80vh;
+  border-radius: 30px;
+}
+.item4{
+  border: 1px solid black;
+  height:80vh;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.item5{
+  height: 100px;
+}
+	/* Links inside the dropdown */
+		.dropdown-content p {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  font-size:20px;
+		}
+	
+}
+
+
+@media screen and (min-width:767px){
+	textarea {
+		font-size: 0.55em;
+		background: rgba(255,255,255,0.1);
+		border: none;
+		box-shadow: 0px -5px 10px 0px var(--BoxShadow-color);
+		border-collapse:collapse;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
+		border-right: 1px solid rgba(255,255,255,0.5);
+		border-radius: 5px;
+		backdrop-filter: blur(5px);
+		overflow: hidden;
+		line-height: 1.2;
+		resize: none;
+		overflow-y: auto;
+		font: 5vw;
+		margin: 0;
+		padding: 0;
+		padding-left: 10px; 
+		padding-top: 10px; 
+		border-color: #202848;
+		width: 900px;
+		height: 40vh;
+	}
+
+	#ad-slot {
+	height: 250px; 
+  }
+  #ad-slot2 { 
+    height: 250px;
+  }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'main main main right right'
+	'footer footer footer right right'
+	'footer footer footer right right';
+  gap: 1px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.41);
+	border-radius: 30px;
+	box-shadow: 5px 5px 10px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  margin: 5px;
+}
+.item1{
+  height: 80px;
+}
+.item3{
+	width:930px;
+  height:80vh;
+  border-radius: 30px;
+}
+.item4{
+  border: 1px solid black;
+  width: 350px;
+  border-radius: 30px;
+}
+.item5{
+  height: 100px;
+}
+
+	.typewriter h1 { 
+	  color:var(--navbar-color); 
+	  -webkit-text-stroke: 1px var(--blackWhite-color); 
+	  font-weight: bold; 
+	  font-size: 7vh;
+	  text-align:center;
+	}
+	.typewriter{
+		margin-top:50px;
+	  }
+	.navbar{
+	  text-align: center; 
+	  background-color: var(--navbar-color);
+	  border-radius: 30px;
+
+	}
+
+	.navbar ul{
+	  overflow: auto;
+	}
+	.navbar li{
+	  display:inline;
+	  list-style: none; 
+	  padding-right: 30px;
+	}
+	.navbar li:hover{
+	  transition: all 0.3s ease-in-out 0s;
+	  filter: drop-shadow(10px 10px 5px black);
+
+	}
+	.navbar li a{
+	  font-size: 3vh;
+	  text-decoration: none;
+	  color: white;
+	}
+
+	.navbar li a:hover{
+	  list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+	}
+	.ic:hover{
+	  color: black
+	}
+
+	
+	.sidediv{
+	  position: fixed; 
+	  left: 0%; 
+	  -webkit-transform: translate(0, 13vh);
+	  float:left;
+	  z-index:99999;  
+	  
+	}
+	
+	h2{
+    padding: 2rem 1rem;
+    text-align: center;
+    color:var(--buttonBackground-color); 
+	font-size: 2vw;
+    
+}
+	
+	p{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+	
+	 .sidenav{
+	   display:none;
+	 }
+	span{
+	display:none;
+	}
+	
+	/* Links inside the dropdown */
+		.dropdown-content p {
+		  color: black;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		  font-size:20px;
+		}
+}
+
+.content ul {
+  list-style-type: none;
+  font-size: 20px;
+  height:60vh;
+  overflow: hidden;
+  overflow: auto;
+ }
+
+html, body {
+  background-size: 2574px 2574px;
+}
+
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:800;
+  background: var(--buttonBackground-color);
+  border: 1px solid #050A30;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  width: 10em;
+  padding: 0.7em;
+  margin: 5px;
+  font-size: 70%;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: #050A30;
+  display: inline-block;
+	cursor: pointer;
+}
+button:hover {
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+  text-decoration: none;
+  background-color: #0005;
+	cursor: pointer;
+  color: var(--buttonHover-color);
+  border-color: var(--navbar-color);
+}
+
+
+
+text:focus, input:focus {
+    color: #000000;
+}
+input{
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -o-border-radius: 30px;
+  color: black;
+  padding:5px;
+  margin: 5px;
+}
+
+
+#navi{
+  width:100%;
+  height:100vh;
+  background-size: cover;
+}
+
+.navbar{
+  text-align: center; 
+  background-color: var(--navbar-color);
+  border-radius: 30px;
+}
+
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+
+
+
+.navbar li a:hover{
+  list-style-position:inside;
+  border-bottom: 2px solid var(--buttonBackground-color);
+  color: var(--BlackWhite-color);
+}
+.ic:hover{
+  color: black
+}
+
+#myFile {
+  text-align: center;
+  margin: auto;
+}
+
+input:hover{
+    color: var(--navbar-color);
+	font: 5vw;
+	box-shadow: 5px 5px 10px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+}
+
+textarea:focus, input:focus {
+    color: #000000;
+}
+
+input[type="text"], textarea { 
+  background: var(--innerTextarea);
+}
+textarea::placeholder {
+	font: 4vw;
+}
+
+
+.typewriter h1 { 
+  text-align:center;
+}
+
+
+legend {
+  font-size: x-large;
+  color: var(--legend-color);
+  padding: 5px 10px;
+  -webkit-text-stroke: 0px #202848;
+}
+
+#btn{
+	padding-left: 1px;
+	
+}
+#btn2{
+	padding-left: 1px;
+	
+}
+#counter{
+	text-align: center;
+	background: rgba(255, 255, 255, 0.41);
+	border-radius: 16px;
+	box-shadow: 5px 5px 10px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 50px 50px 50px 50px; 
+  width: 8em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+  box-shadow: 10px 10px 20px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  height:6.5em; 
+  width:6.5em;
+}
+.sidediv img:hover{
+ cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+
+
+ /* Dropdown Button */
+.dropbtn {
+  cursor: pointer; 
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--navbar-color);
+  min-width: 210px;
+}
+.dropdown-content p:hover{
+	background-color: var(--buttonBackground-color);
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;} 
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.content p{
+  color: black;
+}
+
+</style>
+
+<script>
+	document.onkeydown = function(e) {
+	if(event.keyCode == 123) {
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+	return false;
+	}
+	}
+</script>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+</head>
+
+
+
+
+<body translate="no" style="background: var(--backgroun-colour);" oncontextmenu="return false;" onload="onPageLoad()">
+
+ <div class="sidediv" title="Dark-Light Mode">
+    <button id="ic"><img src="https://cdn-icons-png.flaticon.com/128/7645/7645197.png" alt="Dark-light Mode" id="img"/></button>
+  </div>
+
+ <header>
+  <nav class="navbar justify-content-center" style="list-style-position:inside; border-bottom: 2px solid var(--buttonBackground-color);">
+    <ul>
+	<li><a href="/tools/article-rewriter" title="Article rewriter tool.">Article Rewriter</a></li>
+	<li><a href="/tools/grammar-checker" title="Grammar Checker/Corrector Tool" rel="follow">Grammar Checker</a></li>
+	<li><a href="/tools/code-generator" title="Customised Code generator!" rel="follow">Code Generator</a></li>
+	<li><a href="/tools/blog-creator" title="Generate blog content" rel="follow">Blog Creater</a></li>
+	<li><a href="/tools/content-create" title="Create tweet, cold emails and essays!" rel="follow">Content Creator</a></li>
+    <li><a href="/tools/word-counter" title="Count words and sentences" rel="follow">Word Counter</a></li>
+    <li><a href="/tools/text-compare" title="Count words and sentences" rel="follow">Compare Text</a></li>
+	<li><a href="/tools/code-compare" title="Count words and sentences" rel="follow">Compare Code</a></li>
+    </ul>
+  </nav>
+  <span style="font-size:30px;cursor:pointer; padding-left:20px; color: var(--BlackWhite-color);" onclick="openNav()">&#9776;</span>
+  <div id="mySidenav" class="sidenav">
+  <a href="/tools/word-counter" class="closebtn" onclick="closeNav()">&times;</a>
+    <ul>
+	<li><a href="/tools/article-rewriter">Article Rewriter</a></li>
+	<li><a href="/tools/grammar-checker">Grammar Checker</a></li>
+	<li><a href="/tools/code-generator">Code Generator</a></li>
+	<li><a href="/tools/blog-creator">Blog Creater</a></li>
+	<li><a href="/tools/content-create">Content Creator</a></li>
+	<li><a href="/tools/word-counter">Word Counter</a></li>
+	<li><a href="/tools/text-compare">Compare Text</a></li>
+	<li><a href="/tools/code-compare">Compare Code</a></li>
+	</ul>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<br>
+  <div class="typewriter">
+		<h1>Word Counter</h1>
+  </div>
+
+</header>
+<br>
+<div class="grid-container">
+<div class="item3">
+
+
+		<form method="post" id="que">  
+		<fieldset>
+
+		<label for="txt1" style="font-size: x-large; color: var(--legend-color); padding: 5px 10px; -webkit-text-stroke: 0px #202848;"><strong>Enter Your Text</strong></label>
+		<br>
+		<textarea id="txt1"  name="text" rows="50" cols="30" autofocus required  placeholder="  Type your text here" title="Type your text/ paste your article.">{{sample_input}}</textarea>
+		<div id="counter" style="font-size:25px; color: black;">Words: 0 Characters: 0</div>
+		<br>
+		<input type="submit" value="Check Grammar" title="Only 500 words allowed at a time!"  formaction="/grammar">
+		<input type="submit" value="Rewrite text" title="Only 500 words allowed at a time!"  formaction="/article">
+		<input type="button" value="&#128465;" onclick="javascript:eraseText();" title="Clear all the text."> 
+		
+		<br>    
+		</fieldset>
+		</form>
+ 
+	<br>
+  </div>
+<div class="item4">
+ <div class="dropdown">
+  <button type="button" class="dropbtn" id="btn" title="Click! To get more details.">Details &#10549;</button>
+  <div class="content" style="background-color:#f1f1f1;">
+    <p id="word" style="font-size:20px;"><strong>Words:</strong></p>
+	<p id="Characters" style="font-size:20px;"><strong>Characters:</strong></p>
+	<p id="Sentences" style="font-size:20px;"><strong>Sentences:</strong></p>
+	<p id="time" style="font-size:20px;"><strong>Reading Time:</strong></p>
+	<p id="level" style="font-size:20px;"><strong>Reading Level:</strong></p>
+	<p id="ease" style="font-size:20px;"><strong>Reading ease:</strong></p>
+	
+	
+  </div>
+	<br>
+	<button type="button" class="dropbtn2" id="btn2" title="Click! To get more details.">Repetition &#10549;</button>
+  <div class="content" style="background-color:#f1f1f1;">
+	<p style="font-size:20px; border-bottom:2px solid black;"><strong>Word Repetition</strong></p>
+	<ul id="myList" >
+	</ul>
+  </div>
+  
+
+  
+</div>
+<script>
+		const messageEle = document.getElementById('txt1');
+		const counterEle = document.getElementById('counter');
+		const wordEle = document.getElementById('word');
+		const charEle = document.getElementById('Characters');
+		const senEle = document.getElementById('Sentences');
+		const readTime = document.getElementById('time');
+		
+		function onPageLoad() {
+			var text = document.getElementById("txt1").value;
+			const currentLength = text.length;
+			esca = ["mr.", "mrs.", "ms.", "prof.", "dr.", "gen.", "rep.", "sen.", "st.",
+                "sr.", "jr.", "ph.", "ph.d.", "m.d.", "b.a.", "a.a.", "d.d.", "d.s.s.",
+                 "b.c.", "a.m.", "p.m.", "a.d.", "b.c.e.", "c.e.",
+                "i.e.", "etc.", "e.g.", "al.","b.e.", "b.tech."];
+			
+			var numWords = 0;
+			let sen = 0;
+			text = text.trim();
+			text = text.replace(/\n+/g, ' ');
+			text = text.replace(/  +/g,' ');
+			if(text.length===0){
+			   numWords = 0;
+			}
+			else{
+			const myArray = text.split(' ');
+			numWords = myArray.length;	
+					
+			 for (let index = 0; index < myArray.length; index++)
+		    {   
+					myArray[index] = myArray[index].toLowerCase();
+					if(myArray[index].charAt(myArray[index].length-1)==='.'|| myArray[index].charAt(myArray[index].length-1)==='!' || myArray[index].charAt(myArray[index].length-1)==='?'){
+						if(!(esca.includes(myArray[index]))){
+						  sen = sen +1;
+						}
+				}
+				if(myArray[index].charAt(myArray[index].length-1)==='.'|| myArray[index].charAt(myArray[index].length-1)==='!' || myArray[index].charAt(myArray[index].length-1)==='?' || myArray[index].charAt(myArray[index].length-1)===',' || myArray[index].charAt(myArray[index].length-1)===')'){
+					var temp = myArray[index].slice(0, myArray[index].length-1);
+					myArray[index] = temp;
+				}
+				if(myArray[index].charAt(0)==='('){
+					var temp = myArray[index].slice(1, myArray[index].length);
+					myArray[index] = temp;
+				}
+			  }
+			
+	}
+			const wpm = 225;
+			if((numWords / wpm)*60 <=60){
+				const time = ((numWords / wpm)*60).toFixed(2);
+				readTime.innerHTML = `<strong>Reading Time:<\/strong> : ${time} sec`;
+			}
+			else{
+				const time = (numWords / wpm).toFixed(2);
+				readTime.innerHTML = `<strong>Reading Time:<\/strong> : ${time} min`;
+			}
+			counterEle.innerHTML = `Words : ${numWords} Characters: ${currentLength}`;
+			wordEle.innerHTML = `<strong>Words<\/strong> : ${numWords}`;
+			charEle.innerHTML = `<strong>Characters<\/strong>: ${currentLength}`;
+			
+			senEle.innerHTML = `<strong>Sentences<\/strong> : ${sen}`;
+		
+		
+		}
+		
+		
+//------------------------------------------------------------------------------------------------------
+		
+		document.addEventListener('input', function (e) {
+			
+		const target = e.target;
+		// Get the `maxlength` attribute
+		//const maxLength = target.getAttribute('maxlength');
+
+		// Count the current number of characters
+		
+		
+		const currentLength = target.value.length;
+			var text = document.getElementById("txt1").value;
+			esca = ["mr.", "mrs.", "ms.", "prof.", "dr.", "gen.", "rep.", "sen.", "st.",
+                "sr.", "jr.", "ph.", "ph.d.", "m.d.", "b.a.", "a.a.", "d.d.", "d.s.s.",
+                 "b.c.", "a.m.", "p.m.", "a.d.", "b.c.e.", "c.e.",
+                "i.e.", "etc.", "e.g.", "al.","b.e.", "b.tech."];
+			
+			var numWords = 0;
+			let sen = 0;
+			text = text.trim();
+			text = text.replace(/\n+/g, ' ');
+			text = text.replace(/  +/g,' ');
+			if(text.length===0){
+			   numWords = 0;
+			}
+			else{
+			const myArray = text.split(' ');
+			numWords = myArray.length;
+			let dict = {};	
+						
+			 for (let index = 0; index < myArray.length; index++)
+		    {   
+					myArray[index] = myArray[index].toLowerCase();
+					if(myArray[index].charAt(myArray[index].length-1)==='.'|| myArray[index].charAt(myArray[index].length-1)==='!' || myArray[index].charAt(myArray[index].length-1)==='?'){
+						if(!(esca.includes(myArray[index]))){
+						  sen = sen +1;
+						}
+				}
+				if(myArray[index].charAt(myArray[index].length-1)==='.'|| myArray[index].charAt(myArray[index].length-1)==='!' || myArray[index].charAt(myArray[index].length-1)==='?' || myArray[index].charAt(myArray[index].length-1)===',' || myArray[index].charAt(myArray[index].length-1)===')'){
+					var temp = myArray[index].slice(0, myArray[index].length-1);
+					myArray[index] = temp;
+				}
+				if(myArray[index].charAt(0)==='('){
+					var temp = myArray[index].slice(1, myArray[index].length);
+					myArray[index] = temp;
+				}
+				
+				 }
+				}
+			  
+				const wpm = 225;
+			if((numWords / wpm)*60 <=60){
+				const time = ((numWords / wpm)*60).toFixed(2);
+				readTime.innerHTML = `<strong>Reading Time:<\/strong> : ${time} sec`;
+			}
+			else{
+				const time = (numWords / wpm).toFixed(2);
+				readTime.innerHTML = `<strong>Reading Time:<\/strong> : ${time} min`;
+			}
+			
+			counterEle.innerHTML = `Words : ${numWords} Characters: ${currentLength}`;
+			wordEle.innerHTML = `<strong>Words<\/strong> : ${numWords}`;
+			charEle.innerHTML = `<strong>Characters<\/strong>: ${currentLength}`;
+			senEle.innerHTML = `<strong>Sentences<\/strong> : ${sen}`;
+			
+			
+			
+			});
+		
+		function eraseText() {
+			document.getElementById("txt1").value = "";
+			counterEle.innerHTML = `Words : ${0} Characters: ${0}`;
+			wordEle.innerHTML = `Words : ${0}`;
+			charEle.innerHTML = `Characters: ${0}`;
+			senEle.innerHTML = `Sentences : ${0}`;
+			let list = document.getElementById("myList");
+			list.innerHTML = ``;
+		}
+		</script>
+
+
+
+<script>
+var coll = document.getElementsByClassName("dropbtn");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+	  
+		level.innerHTML = "Fetching score...";
+			var requestUrl = "/tools/word-counter";
+			var data = document.getElementById("txt1").value;
+			var request = new XMLHttpRequest();
+			request.open('POST', requestUrl, true);
+			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+			request.send("text=" + document.getElementById('txt1').value);
+			request.onload = function() {
+				if (this.status >= 200 && this.status < 400) {
+				// Success!
+				level.innerHTML =`<strong>Reading Level<\/strong>: ${this.responseText}`;
+				} else {
+				// We reached our target server, but it returned an error
+				level.innerHTML = `<strong>Reading Level<\/strong>: Not available.`;
+				}
+			}
+		
+		ease.innerHTML = "Fetching score...";
+			var requestUrl = "/tools/word";
+			var data = document.getElementById("txt1").value;
+			var request = new XMLHttpRequest();
+			request.open('POST', requestUrl, true);
+			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+			request.send("text=" + document.getElementById('txt1').value);
+			request.onload = function() {
+			if (this.status >= 200 && this.status < 400) {
+			// Success!
+			ease.innerHTML =`<strong>Reading ease<\/strong>: ${this.responseText}`;
+			} else {
+			// We reached our target server, but it returned an error
+			ease.innerHTML = `<strong>Reading ease<\/strong>: Not available.`;
+		}
+	  
+    }
+  }
+  });
+}
+
+</script>
+
+
+<script>
+//Scipt of repetition
+var coll = document.getElementsByClassName("dropbtn2");
+var i;
+
+help=["do","does","did","has","have","had","is","am","are","was","were","be","being","been","may","must",
+				"might","should","could","would","shall","will","can","ought","i","my","him","his","her","they","to","you","your",
+				"the","of","and","it","as","not","we","us","by","its","it's","from","this","these","there","their","also","with","who","but",
+				"a","new","or","an","often","take","taken","that","even","he","she","they","them","1","2","3","4","5","6","7","8","9","0",
+				"for","like","on","get","if","else","all","so","out","into","isn't","too","try","the","they","no","due","still","now","much",
+				"at","we've","you've","are","its","where","doesn't","do","don't","dont","does","did","take","going","was","wasn't","haven't","hadn't",
+				"won't","i'll","he'll","they'll","he's","she'll","let","me","here","when","in","while","gets","which","know","tell","how","goes","isn’t","doesn’t",
+				"won’t","don’t","was’t","haven’t","it’s","what","can’t","takes","after","later","need","needs","didn’t","didn't","why","knows","want","wants",
+				"away","gives","give","given","gave","come","came","able","unable","meet","meets","met","than","then","nor","what’s","what's","just","our"];
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+	  var text = document.getElementById("txt1").value;
+	  let list = document.getElementById("myList");
+	  if(text.length===0){
+		list.innerHTML = ``;
+	  }
+	  else{
+			text = text.trim();
+			text = text.replace(/\n+/g, ' ');
+			text = text.replace(/  +/g,' ');
+			const myArray = text.split(' ');
+			numWords = myArray.length;
+			let dict = {};	
+						
+			 for (let index = 0; index < myArray.length; index++)
+		    {   
+					myArray[index] = myArray[index].toLowerCase();
+					
+				if(myArray[index].charAt(myArray[index].length-1)==='.'|| myArray[index].charAt(myArray[index].length-1)==='!' || myArray[index].charAt(myArray[index].length-1)==='?' || myArray[index].charAt(myArray[index].length-1)===',' || myArray[index].charAt(myArray[index].length-1)===')'){
+					var temp = myArray[index].slice(0, myArray[index].length-1);
+					myArray[index] = temp;
+				}
+				if(myArray[index].charAt(0)==='('){
+					var temp = myArray[index].slice(1, myArray[index].length);
+					myArray[index] = temp;
+				}
+				function containsNumbers(str) {
+				  return /\d/.test(str);
+				}
+				if(!(help.includes(myArray[index]))&&!(containsNumbers(myArray[index]))){
+					if(!(myArray[index]===' ')&&!(myArray[index] in dict)){
+						dict[myArray[index]] = 1;
+						
+					}
+					else{
+						dict[myArray[index]] = dict[myArray[index]] +1;
+					  }
+				}
+			  }
+			const sortable = Object.entries(dict).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+
+			
+			
+			let li = ``;
+			for (let item in sortable) {
+		      	li = li + `<li>${item} : ${sortable[item]}<\/li>`
+				list.innerHTML = li;  
+	    	}
+	
+		}
+	}
+  });
+}
+
+</script>
+ 
+</div>
+
+</div>
+<br>
+<div id="ad-slot" title="Google Ads" >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<br>
+<h2 style="text-align:center;"><strong>What is Word Counter Tool?</strong></h2>
+<p style="text-align:center;">Our tool is designed to help you get the most out of your writing by providing valuable information about your text. Whether you're working on an essay, a blog post, or any other type of written content, our word counter can help you improve your writing by providing valuable insights and statistics.
+
+With our tool, you can easily count the number of words, sentences, and repeated words in your text. We also provide a reading level and reading ease score, which can help you determine the complexity of your writing and whether it is suitable for your intended audience. Additionally, our tool can estimate the reading time for your text, so you can gauge how long it will take for someone to read through your content.
+
+Whether you're a professional writer or a student working on an assignment, our word counter is here to help you improve your writing and make your text more effective. We hope you find it useful, and we look forward to helping you with your writing needs.</p>
+<br>
+<h2><strong>How to Use This Tool?</strong></h2>
+<p style="text-align:center;">Type the text in the textarea given. The below field will show the characters and words present in the text box. Click on "Details" button to get detailed information.</p>
+<br>
+<h2><strong>How to choose best Word Counter Tool?</strong></h2>
+<p style="text-align:center;">When choosing a word counter tool, there are several factors you may want to consider:
+
+    Ease of use: Make sure the word counter is easy to use and understand. It should have a clear interface and straightforward instructions for counting words.
+
+    Accuracy: The word counter should provide an accurate count of the words in your text. You can test this by comparing the count to a manual count or by using multiple word counters and comparing the results.
+
+    Additional features: Some word counters may offer additional features such as the ability to exclude certain words or phrases from the count, count words in multiple languages, or analyze the frequency of specific words or phrases. Consider whether these features would be useful for your purposes.</p>
+<br>
+<br>
+<h2><strong>What is OpenAI?</strong></h2>
+<p style="text-align:center;">Our websites <a href="https://gunz-tools.com/tools/article-rewriter" rel="nofollow">Article Rewriter</a>, <a href="https://gunz-tools.com/tools/grammar-checker" rel="nofollow">Grammar Checker</a>, <a href="https://gunz-tools.com/tools/code-generator" rel="nofollow">Code Generator</a> and <a href="https://gunz-tools.com/tools/content-create" rel="nofollow">Content Create</a> are based on <a href="https://openai.com/about/" rel="nofollow">OpenAI</a> technology.<br><strong><a href="https://openai.com/about/" rel="nofollow">OpenAI</a></strong> is an <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" rel="nofollow">Artificial Intelligence (AI)</a> research laboratory consisting of the for-profit corporation OpenAI LP and its parent company, the non-profit <strong>OpenAI Inc</strong>. The company conducts research in the field of AI with the stated goal of promoting and developing friendly AI in a way that benefits humanity as a whole</p>
+<br>
+
+<script>
+  var ic= document.getElementById("ic");
+  ic.addEventListener('click', () =>{
+	document.body.classList.toggle("dark-theme");
+	if(document.body.classList.contains("dark-theme")){
+	 localStorage.setItem('darkMode', 'enabled');
+	 img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+	else{
+	  localStorage.setItem('darkMode', 'disabled');
+	  img.src = "https://cdn-icons-png.flaticon.com/128/7645/7645197.png";
+	  }
+	});
+if(localStorage.getItem('darkMode') == 'enabled'){
+    document.body.classList.toggle('dark-theme');
+	img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://gunz-tools.com/sitemap.xml

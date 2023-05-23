@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVSX91SJ2W"></script>
+<meta name="robots" content="index, archive">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVSX91SJ2W');
+</script>
+    <link rel="canonical" href="https://gunz-tools.com/docs/secure"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Secure PDF by encrypt it by password.">
+	<meta name="keywords" content="secure pdf, encrypt pdf, lock pdf, keep password to pdf">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='1534-paper-boat-lineal.png')}}" sizes="192x192"/>
+    <title>Secure File</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+  <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+
+<style>
+:root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: #2E8BC0;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --Card-border-color: #145DA0;
+  --buttonBackground-color: #7EC8E3;
+  --hoverBackground: #2E8BC0;
+  --hoverBorder: #145DA0;
+}
+
+.dark-theme{
+  --backgroun-colour: #000000;
+  --navbar-color: #cd2d55;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: white;
+  --BoxShadow-color:#808080;
+  --Card-border-color: white;
+  --buttonBackground-color:#e18199;
+  --hoverBackground: #7b1b33;
+  --hoverBorder: #b8284c;
+}
+
+@media screen and (max-width:767px){
+
+.flex-container{
+  display: flex;
+  border:2px #fff;
+}
+
+.navbar{
+  text-align: center; 
+  background-color: var(--navbar-color);
+  border-radius: 30px;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 25px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 2.2vw;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li a:hover{
+  list-style-position:inside;
+  border-bottom: 2px solid var(--buttonBackground-color);
+  color: var(--BlackWhite-color);
+}
+.ic:hover{
+  color: black
+}
+
+
+
+.typewriter h1 { 
+  color:var(--navbar-color); 
+  -webkit-text-stroke: 1px var(--blackWhite-color); 
+  font-weight: bold; 
+  font-size:x-large;
+  text-align: center;
+}
+.typewriter img{
+  width: 140px;
+  height: 150px;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ h1{
+         text-align: center;
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color);
+		 font-size: 2vh;
+	} 
+h2{
+         text-align: center;
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color);
+		 font-size: 2vh;
+	}
+  p{
+     text-align: center;
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 0px 50px 50px 0px; 
+  width: 9em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+}
+.sidediv{
+  position: fixed; 
+  left: 0%; 
+  -webkit-transform: translate(0, 7vh);
+  float:left; 
+   z-index:99999;
+  
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  padding-left: 2em;
+}
+.sidediv img:hover{
+cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+.card{
+ box-shadow: 10px 10px 20px var(--BoxShadow-color);
+ width: 37vw;
+ height: 35vw;
+ border: 1px solid var(--Card-border-color);
+ justify-content:center;
+}
+
+.card-header{
+  font-size: 2vw;
+ border: 1px solid var(--Card-border-color);
+}
+.card-text{
+  text-align: center;
+  font-size: 2vw;
+}
+  
+  .btn{
+  color: white; 
+  font-size: 2.9vw;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  width: 20em; 
+  height: 5em;
+  margin: 5px;
+  background-color: var(--navbar-color);
+  border: var(--Card-border-color);
+}
+
+.btn:hover{
+  background-color: var(--hoverBackground);
+  border: var(--hoverBorder);
+}
+	h3{
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--buttonBackground-color); 
+		 font-size: 2vh;
+	}
+	h2{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+
+.navbar{
+	display: none;
+}
+	
+.sidenav {
+padding-top: 15px;
+display: block;}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--navbar-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+  border-bottom: 2px solid var(--buttonBackground-color);;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.preview embed{
+  width :35vw;
+  height:35vw;
+  margin-left:20px;
+}
+
+.preview{
+  border:2px solid black;  
+  padding: 50px;  
+  margin: 20px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+fieldset{
+  border: 1px solid black;
+  padding: 10px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}
+}
+
+
+
+@media screen and (min-width:767px){
+
+.flex-container{
+  display: flex;
+  border:2px #fff;
+}
+
+.navbar{
+  text-align: center; 
+  background-color: var(--navbar-color);
+  border-radius: 30px;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 50px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 4vh;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li a:hover{
+  list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+}
+.ic:hover{
+  color: black
+}
+
+
+.typewriter h1 { 
+  color:var(--navbar-color); 
+  -webkit-text-stroke: 1px var(--blackWhite-color); 
+  font-weight: bold; 
+  font-size: 7vh;
+  text-align: center;
+}
+.typewriter img{
+  width: 140px;
+  height: 150px;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preview{
+  border:2px solid black;
+  padding: 50px;  
+  margin: 60px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 0px 50px 50px 0px; 
+  width: 9em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+}
+.sidediv{
+  position: fixed; 
+  left: 0%; 
+  -webkit-transform: translate(0, 13vh);
+  float:left; 
+   z-index:99999;
+  
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  padding-left: 2em;
+}
+.sidediv img:hover{
+cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+.card{
+ box-shadow: 10px 10px 20px var(--BoxShadow-color);
+ width: 37vh;
+ height: 35vh;
+ border: 1px solid var(--Card-border-color);
+ justify-content:center;
+}
+
+.card-header{
+  font-size: 2.5vh;
+ border: 1px solid var(--Card-border-color);
+}
+.card-text{
+  justify-content:center;
+  font-size: 1.5em;
+}
+.card-title{
+ justify-content:center;
+  font-size: 2em;
+  width: 35vh;
+  height: 12vh; 
+}
+
+.card-title img{ 
+   height:8vh;
+ }
+.btn{
+  color: white;
+  font-size: 2.3vh;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  width: 20em; 
+  height: 4em;
+  background-color: var(--navbar-color);
+  border: var(--Card-border-color);
+  margin: 5px;
+}
+
+.btn:hover{
+  background-color: var(--hoverBackground);
+  border: var(--hoverBorder);
+}
+
+	h3{
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--buttonBackground-color); 
+		 font-size: 2vw;
+	}
+	h2{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+	
+	.sidenav{
+	   display:none;
+	 }
+	span{
+	display:none;
+	}
+	
+	.lead{
+	 font-size: 2.5em;
+	 text-align: center;
+	}
+	
+	
+	
+	/* entire container, keeps perspective */
+.col-lg-3 {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.col-lg-3:hover .card, .col-lg-3.hover .card {
+		transform: rotateY(180deg);
+	}
+
+.back {
+	width: 35vh;
+	height: 12vh;
+}
+
+/* flip speed goes here */
+.card {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.card-body, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+}
+
+/* card-body pane, placed above back */
+.card-body {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+.preview embed{
+  width :300px;
+  height:300px;
+  margin-right:16px;
+}
+fieldset{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  width: 300px;
+  padding: 10px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.7 );
+}	
+	h1{
+         text-align: center;
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color); 
+		 font-size: 2vw;
+	}
+h2{
+         text-align: center;
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color); 
+		 font-size: 2vw;
+	}
+	p{
+	  text-align: center;
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+}
+
+html,body{
+	  background: var(--backgroun-colour);
+	  background-size: 2574px 2574px;
+}
+p{
+
+text-align: center;
+}
+#mid{
+
+text-align: center;
+}
+
+
+.container{
+height: 600px;
+}
+.preview{
+  text-align: center;
+}
+.preview embed{
+  width :300px;
+  height:300px;
+}
+#button{
+   border-radius: 12px;
+   margin-left:16px;
+}
+#button1{
+   border-radius: 12px;
+   margin-left:16px;
+}
+#button2{
+   border-radius: 12px;
+   margin-left:16px;
+}
+.select #id_select2_example{
+  width:200px;
+  height:25px;
+  text-align:center;
+  background:var(--buttonBackground-color);
+  border-radius:10px;
+  margin:5px;
+}
+
+input:hover{
+    color: var(--buttonBackground-color);
+	font: 5vw;
+	border: 1px solid var(--buttonBackground-color);
+}
+
+input[type="text"]{ 
+  background: white;
+  width: 200px;
+  
+}
+text:focus, input:focus {
+    color: #000000;
+}
+input{
+  color: var(--BlackWhite-color);
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:5px;
+  border: 1px solid black;
+}
+
+
+legend {
+	display: block;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: var(--navbar-color);
+	font: 5vw;
+	
+}
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--hoverBackground);
+  border: 2px solid var(--navbar-color);
+}
+
+
+
+.card{
+  margin-left: 20px;
+  margin-bottom:20px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.card-body{
+   justify-content:center;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--hoverBackground);
+  border: 2px solid var(--navbar-color);
+}
+.number{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--buttonBackground-color);
+  color: var(--buttonBackground-color);
+  text-align: center;
+  font: 20px Arial, sans-serif;
+}
+
+#ad-slot { 
+    height: 250px;
+  }
+#ad-slot2 { 
+    height: 250px;
+  }
+
+</style>
+
+
+<script>
+	document.onkeydown = function(e) {
+	if(event.keyCode == 123) {
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+	return false;
+	}
+	}
+</script>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+    <!-- Custom styles for this template -->
+</head>
+
+<body translate="no" style="background: var(--backgroun-colour);" oncontextmenu="return false;"> 
+
+
+<header>
+  <p style="font-size:1.5em; color: grey; padding-left:15px;"><a href="/" style="color: var(--navbar-color);">Home</a> > <a href="/docs/" style="color: var(--navbar-color);">Convert</a> > <a href="#" style="color: var(--navbar-color);">Secure PDF</a></p>
+
+  
+</header>
+<br>
+
+<div class="preview">
+  <div class="typewriter">
+        <img src="{{url_for('static', filename='encrypt.png')}}"  alt="Secure pdf">
+		<h1>Secure PDF</h1>
+</div>
+<br>
+<br>
+<br>
+
+<form action="/docs/secure" method="POST" enctype="multipart/form-data">
+<fieldset>
+<legend>Upload PDF File</legend>
+<input id="myFile" type="file" name="myfile"  accept=".pdf" required />
+<div id="size"></div>
+<script>
+// Query the elements
+const fileEle = document.getElementById('myFile');
+const sizeEle = document.getElementById('size');
+
+fileEle.addEventListener('change', function (e) {
+    const files = e.target.files;
+    if (files.length === 0) {
+        // Hide the size element if user doesn't choose any file
+        sizeEle.innerHTML = '';
+        sizeEle.style.display = 'none';
+    } else {
+        // File size in bytes
+        sizeEle.innerHTML = formatFileSize(files[0].size);
+
+        // Display it
+        sizeEle.style.display = 'block';
+    }
+});
+
+// Convert the file size to a readable format
+const formatFileSize = function (bytes) {
+    const sufixes = ['B', 'kB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${sufixes[i]}`;
+};
+
+
+</script>
+</fieldset>
+<br>
+<br>
+<fieldset>
+<legend>Enter Password</legend>
+<input type="text" id="encrypt" name="encrypt" required minlength="4" maxlength="8" size="10" placeholder="Enter password to encrypt. (4 to 8 char)" />
+ </fieldset>
+ <br>
+ <br>
+<br>
+<button class="btn" id="button" type="submit" value="Submit" style="text-align: center;">Encrypt Now</button>
+</form>
+<br>
+<br>
+
+ <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<br>
+<br>
+<a href="/docs/" class="btn" id="button1" style="text-align: center; width:110px; height:30px;">Convert More</a> 
+</div>
+
+<br>
+<div id="ad-slot" title="Google Ads" >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<br>
+<br>
+<br>	  
+<h2><strong>Encryption Tool Free!</strong></h2>
+  <div class="p-5 rounded mt-1 justify-content-center">
+    <div class="row justify-content-center">
+
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+		    <div class="number">1</div>
+            <p class="card-text">Upload PDF file by using Upload button! </p>
+           
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+		  <div class="number">2</div>
+            <p class="card-text">Enter 4 to 8 character password to protect the PDF.</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+			<div class="number">3</div>
+            <p class="card-text">Click Encrypt Now and Download your Secured PDF for FREE!</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+	  <p> Once download is completed, we'll remove uploaded document from our server! </p>
+    </div>
+  </div>
+  <br>
+<div id="ad-slot2" title="Google Ads" >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427"
+     crossorigin="anonymous"></script>
+<!-- Unit2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="2903092443"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+  <br>
+<br>
+
+<h1><strong>Why This Tools?</strong></h1>
+<p>In day to day life, we do work where we need to safely tranfer our files in minimum memory used. Also sometimes we receive document in different format as we expected! So here are the tools which allows you to Compress files in order to use low memory space, Secure Files to safely transfer files without anyone changing the content of file. Rotate PDF if desired pdf have different rotation. And so on...</p>
+<br>
+<h1><strong>How to choose best PDF Tool?</strong></h1>
+<p>Play With PDF is one of the best PDF tools that can help you with your work. It is a powerful and easy-to-use PDF editor that can help you edit, convert, and create PDF files easily. With this tool, you can easily edit your PDF files and make them look professional. This PDF editor comes with a wide range of features that can help you with your work. With its powerful editing features, you can easily edit your PDF files and make them look professional. You can also convert your PDF files into other formats such as Word, HTML, TEXT and more. This PDF editor also comes with a wide range of security features that can help you protect your PDF files. With its password protection feature, you can easily protect your PDF files from unauthorized access. Overall, PDFelement is a powerful and easy-to-use PDF editor that can help you with your work. With its wide range of features, you can easily edit, convert, and create PDF files easily.</p>
+<br>
+  </body>
+</html>

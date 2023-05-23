@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVSX91SJ2W"></script>
+
+<meta name="robots" content="index, archive, follow">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVSX91SJ2W');
+</script>
+  <link rel="canonical" href="https://gunz-tools.com/blog">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Want to deploy flask app on server? Tired of searching steps here and there? We are providing all the steps with possible error handling at one site. Follow the steps accurately and deploy the flask app within an hour.">
+  <meta name="keywords" content="host flask app, deploy flask app, gunicorn error, nginx error, how to host website using nginx, how to host flask app using gunicorn">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='56-document-lineal.png')}}" sizes="192x192">
+  <title>Deploy Flask app | Gunicorn, Nginx</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@media screen and (max-width:767px){
+  :root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: #2E8BC0;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --Card-border-color: #145DA0;
+  --buttonBackground-color: #7EC8E3;
+  --hoverBackground: #2E8BC0;
+  --hoverBorder: #145DA0;
+}
+  html, body{
+   background: #FAF9F6;
+}
+  .mob{
+	  border: 2px solid red;
+  }
+  .mob p{
+     color: red;
+     font-size: 30px;
+  }
+  main{
+    display: none;
+  }
+  .navbar{
+  text-align: center; 
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 20px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 5vw;
+  text-decoration: none;
+  color: var(--navbar-color);
+}
+
+.navbar li a:hover{
+    list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+}
+}
+
+
+@media screen and (min-width:767px){
+
+html, body{
+   background: #FAF9F6;
+}
+.mob{
+   display:none;
+}
+:root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: #2E8BC0;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --Card-border-color: #145DA0;
+  --buttonBackground-color: #7EC8E3;
+  --hoverBackground: #2E8BC0;
+  --hoverBorder: #145DA0;
+}
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+	`header header header header header header`
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item2{
+    width: 20vw;
+}
+.item3{
+    background: rgba(255, 255, 255, 0.41);
+	border-radius: 30px;
+	box-shadow: 5px 5px 10px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);;
+   width:54vw;
+}
+.item4{
+   width: 20vw;
+}
+.item5{
+}
+code{
+  font-family: monospace;
+}
+.code-toolbar{
+   width:50vw;
+   position: relative;
+   margin: 0 0 0 27px;
+   padding:10px;
+   background:#252525;
+   color:white;
+   border: 1px solid black;
+   border-radius: 5px;
+   font-size: 15px;
+}
+
+.tool-bar-item{
+   float:right;
+}
+.copy-to-clipboard-button{
+  width:50px;
+  height:23px;
+  background:grey;
+  border:0;
+  border-radius:15px;
+}
+.copy-to-clipboard-button:hover{
+  box-shadow: 0px 0px 5px white;
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid white;
+  
+}
+p{
+  padding-left: 20px;
+}
+label{
+  color: black;
+  font-size: 40px;
+  padding-left: 20px;
+}
+img{
+  padding-top: 10px;
+}
+
+.extra{
+   background: #FFFF8F;
+   padding:10px;
+   border: 3px dotted red;
+   margin: 10px 0 0 0;
+}
+.extra .code-toolbar{
+   width:50vw;
+   position: relative;
+   margin: 0 0 0 13px;
+   padding:10px;
+   background:#252525;
+   color:white;
+   border: 1px solid black;
+   border-radius: 5px;
+   font-size: 15px;
+}
+
+
+.navbar{
+  text-align: center; 
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 35px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 3vh;
+  text-decoration: none;
+  color: var(--navbar-color);
+}
+
+.navbar li a:hover{
+    list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+}
+
+}
+</style>
+
+
+</head>
+
+
+
+
+<body translate="no">
+<header>
+ <nav class="navbar justify-content-center" style="list-style-position:inside;">
+    <ul>
+	<li style="font-size:30px; font-weight:200px; color:var(--Card-border-color)"><strong>Gunz-Tools Blog</strong></li>
+	<li><a href="/" title="Gunz tools." rel="follow" class="w3-xxlarge fa fa-home"></a></li>
+	<li><a href="https://gunz-tools.com/tools" title="Article Rewriter/Grammar Checker/Corrector Tool" rel="follow">Tools</a></li>
+	<li><a href="https://docs.gunz-tools.com/" title="Play With PDF">Docs</a></li>
+	<li><a href="/blog" title="Generate blog content" rel="follow">blog</a></li>
+	<li><a href="https://gunz-tools.com/tools/code" title="Customised Code generator!" rel="follow">Code Generator</a></li>
+	<li><a href="https://gunz-tools.com/tools/wordcounter" title="Count words and sentences" rel="follow">Word Counter</a></li>
+    </ul>
+  </nav>
+
+</header>
+<br>
+<center><div class="mob">
+<p><strong>&#9888;&#65039; Thank you for visiting!&#9888;&#65039; <br>Our website is not For This view!<br>Visit Our other websites from the list above!</strong></p>
+</div></center>
+<main>
+<div class="grid-container">
+  <div class="item2">
+    <div id="ad-slot" title="Google Ads">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div> 
+  </div>
+  <div class="item3">
+  <h1 style="text-align: center; color: #2E8BC0; font-size:50px;">How To Host Website Using Flask-Nginx-Gunicorn</h1>
+  <p style="font-size:20px;">In this post, we will see how to host flask applications using gunicorn and nginx as a reverse proxy and static files server.<br>Lets follow this steps below:</p>
+   <label>Step 1: Installation of required packages.</label>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p1')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p1" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo apt update</code></pre>
+	</div>
+	<p style="font-size:20px;">Now let's install python3, python3-pip, and Nginx, Use following command:</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p2')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;" id="p2">sudo apt install python3-pip python3-dev nginx</code></pre>
+	</div>
+	<center><img src="..\static\first_cmd.png" alt="dependecies"></center>
+	
+	
+	<br>
+	<hr>
+	<label>Step 2: Creating Flask app directory with Virtual Environment.</label>
+	<p style="font-size:20px;">Let's install virtualenv</p>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p3')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p3" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo pip3 install virtualenv</code></pre>
+	</div>
+	<p style="font-size:20px;">Lets create flask app directory.</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p4')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p4" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">mkdir myFlaskApp && cd myFlaskApp</code></pre>
+	</div>
+	<p style="font-size:20px;">Lets activate the virtual environment, before that lets name the virtual environment as "env"</p>
+	<p style="font-size:15px; color:red;">(Remeber always activate virtual environment before starting any flask project.)</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p5')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p5" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">virtualenv env</code></pre>
+	</div>
+	<p style="font-size:20px;">Now, lets activate the virtual environment.</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p6')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p6" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">source env/bin/activate</code></pre>
+	</div>
+	<p style="font-size:20px;">As we've activated virtual environment; Lets install dependencies required for our flask app.</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p7')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p7" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">pip3 install flask gunicorn</code></pre>
+	</div>
+	<div class="extra" title="How to install requirements.txt file">
+	   <p style="font-size:20px;">If you already have flask app in your local device; then append all the required dependencies in "requirements.txt" file. Use following command in your local device.</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p8')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p8" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">pip3 freeze>requirements.txt</code></code></pre>
+	</div>
+	<p style="font-size:20px;">Now to install those dependencies on server; first upload that file on server by using filezilla (we have separate tutorial for that); and then run the following command on server: </p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p9')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p9" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">pip3 install -r requirements.txt</code></code></pre>
+	</div>
+	</div>
+	
+	
+	
+	<br>
+	<hr>
+	<label title="how to create wsgi file.">Step 3: Lets create sample project with wsgi entry point.</label>
+	<p style="font-size:20px;">First let me create my python file which will have all the flask data.</p>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p10')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p10" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo nano app.py</code></pre>
+	</div>
+	<p style="font-size:20px;">Paste the following standard content in app.py;</p>
+	<p style="font-size:15px; color:red;">(Incase you have your own python flask file upload it on server.)</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p11')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p11" class="language python" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello_world():
+    return "Hello World!"
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')</code></pre>
+	</div>
+	<p style="font-size:20px;">Now, press 'Ctrl+S' and then to exit press 'Ctrl+X'</p>
+     <p style="font-size:20px;">Next, we’ll create a file that will serve as the entry point for our application. This will tell our Gunicorn server how to interact with the application.</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p12')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p12" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo nano wsgi.py</code></pre>
+	</div>
+	<p style="font-size:20px;">Copy the contents below to wsgi.py</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p13')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p13" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">from app import app
+
+if __name__ == "__main__":
+    app.run()</code></pre>
+	</div>
+	<p style="font-size:20px;">Now, press 'Ctrl+S' and then to exit press 'Ctrl+X'</p>
+	<p style="font-size:20px;">Lets test gunicorn's ability to serve our project by running the command below:</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p14')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;" title="how to use gunicorn."><code id="p14" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">gunicorn --bind 0.0.0.0:5000 wsgi:app</code></pre>
+	</div>
+	<center><img src="..\static\gunicorn_output.png" alt="gunicorn output"></center>
+	<p style="font-size:20px;">This will temporarily host your website on IP:5000</p>
+	<p style="font-size:20px;">Terminate this with 'Ctrl+C'</p>
+	<p style="font-size:20px;">Now deactivate the virtual environment:</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p15')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p15" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">deactivate</code></pre>
+	</div>
+	
+	
+	
+	<br>
+	<hr>
+	<label title="how to create systemd file; How to configure gunicorn.">Step 4: Creating System and Service Manager File (Systemd file)</label>
+	<p style="font-size:20px;">Lets now create a systemd service using the following commands:</p>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p16')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p16" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo nano /etc/systemd/system/app.service</code></pre>
+	</div>
+	<p style="font-size:20px;">Paste the following content in this file:</p>
+	<p style="font-size:15px; color:red;">(Carefully edit the information in this.)</p>
+     <div class="code-toolbar" style="overflow:auto;">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p17')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code  id="p17" class="language python" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">[Unit]
+#  specifies metadata and dependencies
+Description=Gunicorn instance to serve myproject
+After=network.target
+# tells the init system to only start this after the networking target has been reached
+# We will give our regular user account ownership of the process since it owns all of the relevant files
+[Service]
+# Service specify the user and group under which our process will run.
+User=prasad
+# give group ownership to the www-data group so that Nginx can communicate easily with the Gunicorn processes.
+Group=www-data
+# We'll then map out the working directory and set the PATH environmental variable so that the init system knows where our the executables for the process are located (within our virtual environment).
+WorkingDirectory=/home/user/FlaskAppFolder/
+Environment="PATH=/home/user/FlaskAppFolder/env/bin"
+# We'll then specify the commanded to start the service
+ExecStart=/home/user/FlaskAppFolder/env/bin/gunicorn --workers 3 --bind unix:app.sock -m 007 wsgi:app
+# This will tell systemd what to link this service to if we enable it to start at boot. We want this service to start when the regular multi-user system is up and running:
+[Install]
+WantedBy=multi-user.target</code></pre>
+	</div>
+	<p style="font-size:20px;">Now, press 'Ctrl+S' and then to exit press 'Ctrl+X'</p>
+     <p style="font-size:20px;">Lets activate this service:</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p18')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p18" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo systemctl start app
+sudo systemctl enable app</code></pre><br>
+	  </div>
+	<p style="font-size:20px;">Now type:</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p19')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p19" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">ls</code></pre><br>
+	   </div>
+     <p style="font-size:20px;">A file named app.sock will be automatically created. Folder structure so far:</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p20')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p20" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">myFlaskApp
+  |____ static (if you've created a static folder)
+  |____ templates (if you've created a temlates folder)
+  |____ app.py
+  |____ wsgi.py
+  |____ env
+  |____ app.sock</code></pre><br>
+	   </div>
+	 <div class="extra" title="app.sock file is not produced or created.">
+	   <p style="font-size:20px;">If "app.sock" is not autimatically created; Then<br>1. Check app.service file. Check each line in it.<br>2. Run the following command</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p21')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p21" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo systemctl status app</code></code></pre>
+	</div>
+	</div>  
+	  
+
+	<br>
+	<hr>
+	<label title="Configure nginx.">Step 5: Lets Configure Nginx</label>
+	<p style="font-size:20px;">Create a file named "app" inside /etc/nginx/sites-available:</p>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p22')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p22" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo nano /etc/nginx/sites-available/app</code></pre>
+	</div>
+	<p style="font-size:20px;">Now paste the following content in this file:</p>
+	<p style="font-size:15px; color:red;">(DO NOT FORGET TO CHANGE IP ADDRESS AND YOU FILE PATH)</p>
+   <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p23')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p23" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">server {
+listen 80;
+server_name 165.232.177.116;
+
+location / {
+  include proxy_params;
+  proxy_pass http://unix:/home/user/FlaskAppFlder/app.sock;
+    }
+} </code></pre>
+	</div>
+
+	  <p style="font-size:20px;">Activate this configuration by executing this:</p>
+     <div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p24')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p24" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled</code></pre><br>
+	   </div>
+	 <div class="extra">
+	   <p style="font-size:20px;">If you do changes in "/etc/nginx/sites-available/app" file or if you are re-running the above command and gets error; Then run:</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p25')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p25" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo ln -sf /etc/nginx/sites-available/app /etc/nginx/sites-enabled</code></code></pre>
+	</div>
+	</div>  
+	<p style="font-size:20px;">Restart nginx and your website should work fine!</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p26')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p26" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo systemctl restart nginx</code></code></pre>
+	</div>
+	<p style="font-size:20px;">Visit http://165.232.177.116/</p>
+	<p style="font-size:20px;">If you are using a firewall (for eg. ufw), don't forget to allow nginx to receive incoming traffic on port 80</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p27')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p27" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo ufw allow 'Nginx Full'</code></code></pre>
+	</div>
+	<hr>
+	<div class="extra" title="Got error 502 Bad Gateway error.">
+	   <p style="font-size:20px;">If you get Error 502 like below on web brower</p>
+	   <center><img src="..\static\502-bad-gateway.png" style="width: 50vw;" alt="error 502 bad gateway"></center>
+	   <p style="font-size:20px;">Then Follow few stes: <br>1) Check if app.sock file is present or not.<br>2) Check app.py file have error or not by running</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p28')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p28" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo systemctl status app</code></code></pre>
+	</div>
+	<p style="font-size:20px;">3) Check if you have installed dependencies inside and outside of virtual  environment.<br>4) If above status command doesn't show the actual error then run python file separately:</p>
+	<div class="code-toolbar">
+	   <div class="tool-bar-item">
+			<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p29')">
+				<span>Copy</span>
+			</button>
+		</div>
+	   <pre tabindex="0" style=" display: inline;"><code id="p29" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">gunicorn --bind 0.0.0.0:5000 wsgi:app</code></code></pre>
+	</div>
+	</div>  
+	<br>
+	<hr>
+	<div class="extra">
+	   <p style="font-size:20px;">If you do changes in Python file; everytime run:</p>
+		<div class="code-toolbar">
+		   <div class="tool-bar-item">
+				<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p30')">
+					<span>Copy</span>
+				</button>
+			</div>
+		   <pre tabindex="0" style=" display: inline;"><code id="p30" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;">sudo service app restart</code></code></pre>
+		</div>
+		<p style="font-size:20px;">And If you do changes in Python file as well as other configuration files; everytime run:</p>
+		<div class="code-toolbar">
+		   <div class="tool-bar-item">
+				<button class="copy-to-clipboard-button" type="button" data-copy-state="copy" onclick="copyToClipboard('p1')"  onclick="copyToClipboard('p31')">
+					<span>Copy</span>
+				</button>
+			</div>
+			<pre tabindex="0" style=" display: inline;"><code id="p31" class="language bash" data-prismjs-copy="Copy the JavaScript snippet!" style="cursor:text;" id="p1">sudo service nginx restart
+sudo service app restart</code></code></pre>
+			</div>
+	</div> 
+	
+	<p style="font-size:20px;">Have a Nice Day!</p>
+	<script>
+	function copyToClipboard(element) {
+    let text = document.getElementById(element).innerHTML;
+    try {
+	  const textArea = document.createElement('textarea');
+	  textArea.textContent = text;
+	  document.body.append(textArea);
+	  textArea.select();
+	  document.execCommand("copy");
+	  textArea.remove();
+      alert('Copied to clipboard');
+    } catch (err) {
+      alert('Failed to copy: ', err);
+    }
+  
+}
+	</script>
+  </div>  
+  <div class="item4">
+     <div id="ad-slot" title="Google Ads">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div> 
+  </div>
+  <div class="item5"></div>
+</div>
+</main>
+</body>
+
+</html>

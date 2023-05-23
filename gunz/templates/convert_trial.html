@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVSX91SJ2W"></script>
+<meta name="robots" content="index, archive , follow">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVSX91SJ2W');
+</script>
+    <link rel="canonical" href="https://gunz-tools.com/docs/"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Read pdf, Rotate pdf, Convert pdf into desired format, Secure pdf by keeping password, add watermark in pdf.">
+	<meta name="keywords" content="Read pdf, Rotate pdf, Convert pdf, Secure pdf, watermark pdf">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='1534-paper-boat-lineal.png')}}" sizes="192x192"/>
+    <title>Play with pdf</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+  
+<style>
+:root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: navy;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --Card-border-color: #145DA0;
+  --buttonBackground-color: #7EC8E3;
+  --hoverBackground: #2E8BC0;
+  --hoverBorder: #145DA0;
+}
+
+.dark-theme{
+  --backgroun-colour: #000000;
+  --navbar-color: #cd2d55;
+  --CardBackground-color: transparent;
+  --BlackWhite-color: white;
+  --BoxShadow-color:#808080;
+  --Card-border-color: white;
+  --buttonBackground-color:#e18199;
+  --hoverBackground: #7b1b33;
+  --hoverBorder: #b8284c;
+}
+
+@media screen and (max-width:767px){
+
+.flex-container{
+  display: flex;
+  border:2px #fff;
+}
+
+.navbar{
+  text-align: center; 
+  background-color: var(--navbar-color);
+  border-radius: 30px;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 25px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 2.2vw;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li a:hover{
+  list-style-position:inside;
+  border-bottom: 2px solid var(--buttonBackground-color);
+  color: var(--BlackWhite-color);
+}
+.ic:hover{
+  color: black
+}
+
+
+
+.typewriter h1 { 
+  color:var(--navbar-color); 
+  -webkit-text-stroke: 1px var(--blackWhite-color); 
+  font-weight: bold; 
+  font-size: 4em;
+  text-align: center;
+}
+
+
+
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 0px 50px 50px 0px; 
+  width: 9em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+}
+.sidediv{
+  position: fixed; 
+  left: 0%; 
+  -webkit-transform: translate(0, 7vh);
+  float:left; 
+   z-index:99999;
+  
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  padding-left: 2em;
+}
+.sidediv img:hover{
+cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+.card{
+ box-shadow: 10px 10px 20px var(--BoxShadow-color);
+ width: 37vw;
+ height: 35vw;
+ border: 1px solid var(--Card-border-color);
+ justify-content: center;
+}
+
+.card-header{
+  font-size: 2vw;
+ border: 1px solid var(--Card-border-color);
+}
+.card-text{
+justify-content:center;
+  font-size: 1.7vw;
+}
+
+.card-title{
+ justify-content:center;
+  font-size: 1.5em;
+  width: 35vw;
+  height: 12vw; 
+}
+
+.card-title img{
+    height:8vw;
+	
+ }  
+ h1{
+         text-align: center;
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color);
+		 font-size: 2vh;
+	} 
+	 h2{
+         text-align: center;
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color);
+		 font-size: 2vh;
+	} 
+  p{
+     text-align: center;
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+  .btn{
+  color: white;
+  font-size: 1.8vw;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  width: 9em; 
+  height: 3em;
+  background-color: var(--navbar-color);
+  border: var(--Card-border-color)
+}
+
+.btn:hover{
+  background-color: var(--hoverBackground);
+  border: var(--hoverBorder);
+}
+	h3{
+		 padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--buttonBackground-color); 
+		 font-size: 2vh;
+	}
+	h2{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+
+.navbar{
+	display: none;
+}
+	
+.sidenav {
+padding-top: 15px;
+display: block;}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--navbar-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+  border-bottom: 2px solid var(--buttonBackground-color);;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.lead{
+	 font-size: 2.5em;
+	 text-align: center;
+	}
+	
+	/* card-body pane, placed above back */
+.card-body {
+	z-index: 2;
+}
+	/* entire container, keeps perspective */
+.col-lg-3 {
+	perspective: 1000px;
+}
+
+	
+	
+}
+
+
+
+@media screen and (min-width:767px){
+
+.flex-container{
+  display: flex;
+  border:2px #fff;
+}
+
+.navbar{
+  text-align: center; 
+  background-color: var(--navbar-color);
+  border-radius: 30px;
+}
+
+.navbar ul{
+  overflow: auto;
+}
+.navbar li{
+  display:inline;
+  list-style: none; 
+  padding-right: 50px;
+}
+.navbar li:hover{
+  transition: all 0.3s ease-in-out 0s;
+  filter: drop-shadow(10px 10px 5px black);
+
+}
+.navbar li a{
+  font-size: 4vh;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li a:hover{
+  list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+}
+.ic:hover{
+  color: black
+}
+
+h1{
+         text-align: center;
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color); 
+		 font-size: 2vw;
+	}
+	h2{
+         text-align: center;
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--navbar-color); 
+		 font-size: 2vw;
+	}
+	p{
+	  text-align: center;
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+.typewriter h1 { 
+  color:var(--navbar-color); 
+  -webkit-text-stroke: 1px var(--blackWhite-color); 
+  font-weight: bold; 
+  font-size: 7vh;
+  text-align: center;
+}
+
+
+
+
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 0px 50px 50px 0px; 
+  width: 9em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+}
+.sidediv{
+  position: fixed; 
+  left: 0%; 
+  -webkit-transform: translate(0, 13vh);
+  float:left; 
+   z-index:99999;
+  
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  padding-left: 2em;
+}
+.sidediv img:hover{
+cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+.card{
+ box-shadow: 10px 10px 20px var(--BoxShadow-color);
+ width: 37vh;
+ height: 35vh;
+ border: 1px solid var(--Card-border-color);
+ justify-content:center;
+}
+
+.card-header{
+  font-size: 2.5vh;
+ border: 1px solid var(--Card-border-color);
+}
+.card-text{
+  justify-content:center;
+  font-size: 1.5em;
+}
+.card-title{
+ justify-content:center;
+  font-size: 2em;
+  width: 35vh;
+  height: 12vh; 
+}
+
+.card-title img{
+   height:8vh;
+ }
+.btn{
+  color: white;
+  font-size: 2vh;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  width: 9em; 
+  height: 3em;
+  background-color: var(--navbar-color);
+  border: var(--Card-border-color);
+}
+
+.btn:hover{
+  background-color: var(--hoverBackground);
+  border: var(--hoverBorder);
+}
+
+	h3{
+	     padding-right:25px;
+		 padding-left:10px; 
+		 color:var(--buttonBackground-color); 
+		 font-size: 2vw;
+	}
+	h2{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+	
+	.sidenav{
+	   display:none;
+	 }
+	span{
+	display:none;
+	}
+	
+	.lead{
+	 font-size: 2.5em;
+	 text-align: center;
+	}
+	
+	
+	
+	/* entire container, keeps perspective */
+.col-lg-3 {
+	perspective: 1000px;
+}
+
+
+
+
+
+/* card-body pane, placed above back */
+.card-body {
+	z-index: 2;
+}
+
+
+	
+}
+
+html,body{
+	  background: var(--backgroun-colour);
+	  background-size: 2574px 2574px;
+}
+a {
+text-align: center;
+}
+p{
+
+text-align: center;
+}
+
+
+.container{
+height: 600px;
+}
+.card-body a:hover{
+  border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+}
+
+.card{
+  margin-left: 20px;
+  margin-bottom:20px;
+  /* From https://css.glass */
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.card-body{
+   justify-content:center;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--hoverBackground);
+  border: 2px solid var(--navbar-color);
+}
+.number{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--buttonBackground-color);
+  color: var(--buttonBackground-color);
+  text-align: center;
+  font: 20px Arial, sans-serif;
+}
+#ad-slot { 
+    height: 250px;
+  }
+#ad-slot2 { 
+    height: 250px;
+  }
+
+</style>
+
+<script>
+	document.onkeydown = function(e) {
+	if(event.keyCode == 123) {
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+	return false;
+	}
+	}
+</script>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+    <!-- Custom styles for this template -->
+</head>
+
+<body translate="no" style="background: var(--backgroun-colour);" oncontextmenu="return false;"> 
+
+<br>
+<br>
+<header>
+<p style="font-size:1.5em; color: grey; padding-left:15px;"><a href="/docs/" style="color: var(--navbar-color);">Home</a> > <a href="/docs/" style="color: var(--navbar-color);">Convert</a>
+  <div class="typewriter">
+		<h1>Play With PDF</h1>
+</div>
+  
+</header>
+
+<main class="container" style="background: var(--backgroun-colour);">
+
+
+
+  <div class="p-5 rounded mt-1 justify-content-center">
+    <div class="row justify-content-center">
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/secure"><h5 class="card-title" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='encrypt.png') }}" alt="Secure PDF"/><br>Secure PDF</h5></a>
+			<br>
+            <p class="card-text">Secure Your website by encrypting it!</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/PDFTo"><h5 class="card-title" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='convert.png') }}" alt="Convert PDF"/><br>Convert PDF</h5></a>
+			<br>
+            <p class="card-text">Convert your pdf into desired format.</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/rotate"><h5 class="card-title" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='rotate.png') }}" alt="Rotate PDF"/><br>Rotate PDF</h5></a>
+			<br>
+            <p class="card-text">Rotate pdf by few clicks.</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/read"><h5 class="card-title" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='read.png') }}" alt="PDF reader"/><br>PDF Reader</h5></a>
+			<br>
+            <p class="card-text">Open and Read pdf without using any application.</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/watermark"><h5 class="card-title" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='watermark.png') }}" alt="Watermark"/><br>Watermark</h5></a>
+			<br>
+            <p class="card-text">Insert water mark into existing pdf. To claim your authority.</p>
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+	  
+	  <!-- One Item Starts Here >
+        <div class="card">
+          <div class="card-body">
+            <a href="/docs/anything"><h5 class="card-title" id="mid" style="color: var(--navbar-color);"><img src="{{ url_for('static', filename='anything.png') }}"alt="Anything to Anything"/><br>Anything to Anything</h5></a>
+			<br>
+            <p class="card-text" id="center">Convert any format document into your desired format.</p>
+          </div>
+        </div>
+      <One Item Ends here -->
+
+    </div>
+  </div>
+  <br>
+<div id="ad-slot" title="Google Ads" >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+  
+<br>	  
+<h2><strong>PDF Tool Free!</strong></h2>
+  <div class="p-5 rounded mt-1 justify-content-center">
+    <div class="row justify-content-center">
+
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+		    <div class="number">1</div>
+            <p class="card-text" id="center">Select Desired Operation to be performed like Secure, Compress, Rotate or add Watermark on PDF </p>
+           
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+		  <div class="number">2</div>
+            <p class="card-text" id="center">Our Free Tool will convert PDF into desired format in seconds of time!</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+
+
+      <!-- One Item Starts Here -->
+        <div class="card">
+          <div class="card-body">
+			<div class="number">3</div>
+            <p class="card-text" id="center">You can download your download as soon as you click to Convert!</p>
+            
+          </div>
+        </div>
+      <!-- One Item Ends here -->
+	  <p> Once download is completed, we'll remove uploaded document from our server! </p>
+    </div>
+  </div>
+  <br>
+<div id="ad-slot2" title="Google Ads" >
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427"
+     crossorigin="anonymous"></script>
+<!-- Unit2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="2903092443"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<h1><strong>What if my file is encrypted?</strong></h1>
+<p>Do Not Upload Encrypted File! This can lead to bad result! And we'll not able to provide result! Encrypted files have password issue. It is not possible to decode every file to convert from one version to another.<br> Hence we don't accept the encrypted files.</p>
+<br>
+<h1><strong>Why This Tools?</strong></h1>
+<p>In day to day life, we do work where we need to safely tranfer our files in minimum memory used. Also sometimes we receive document in different format as we expected! So here are the tools which allows you to Compress files in order to use low memory space, Secure Files to safely transfer files without anyone changing the content of file. Rotate PDF if desired pdf have different rotation. And so on...</p>
+<br>
+<h1><strong>How to choose best PDF Tool?</strong></h1>
+<p>Play With PDF is one of the best PDF tools that can help you with your work. It is a powerful and easy-to-use PDF editor that can help you edit, convert, and create PDF files easily. With this tool, you can easily edit your PDF files and make them look professional. This PDF editor comes with a wide range of features that can help you with your work. With its powerful editing features, you can easily edit your PDF files and make them look professional. You can also convert your PDF files into other formats such as Word, HTML, TEXT and more. This PDF editor also comes with a wide range of security features that can help you protect your PDF files. With its password protection feature, you can easily protect your PDF files from unauthorized access. Overall, PDFelement is a powerful and easy-to-use PDF editor that can help you with your work. With its wide range of features, you can easily edit, convert, and create PDF files easily.</p>
+<br>
+</main>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+  var ic= document.getElementById("ic");
+  var img= document.getElementById("img");
+  ic.addEventListener('click', () =>{
+	document.body.classList.toggle("dark-theme");
+	if(document.body.classList.contains("dark-theme")){
+	 localStorage.setItem('darkMode', 'enabled');
+	 img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+	else{
+	  localStorage.setItem('darkMode', 'disabled');
+	  img.src = "https://cdn-icons-png.flaticon.com/128/7645/7645197.png";
+	  }
+	});
+if(localStorage.getItem('darkMode') == 'enabled'){
+    document.body.classList.toggle('dark-theme');
+	img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+</script>
+<br>
+<br>
+
+  </body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVSX91SJ2W"></script>
+<meta name="robots" content="index, archive, follow">
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVSX91SJ2W');
+</script>
+<link rel="canonical" href="https://tools.gunz-tools.com/code">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stuck with problem statement? Wanted to get solution for all programs at one place? This is the code generator tool. It will generate code based on problem statement given for different languages such as Python, JAVA, Perl, C, C++ etc.">
+  <meta name="keywords" content="generate code,java code generate, code, create code ,python code, generate python code, code generator, perl code generator, javascript code generator, c code generate, c++ code generate, generate code by giving problem statement, from problem statement generate code, python code generator, c code generator, c code generate, c++ code generate, code generate, code generator, write code in,what is code of">
+  <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='1326-command-window-line-lineal.png')}}" sizes="192x192">
+  <title>Code Generate-Get Your Desired Code</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
+
+@media screen and (max-width:767px){
+	.question textarea {
+	resize: none;
+	padding-top: 10px; 
+	padding-left: 10px; 
+	border-color: #202848;
+	width: 90vw;
+	height: 20vw;
+}
+	.question.textfieldbox {
+	  position: relative;
+	  top: 35vw;
+	  -webkit-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  transform: translateY(-50%);
+	  text-align: center;
+	}
+	#ad-slot { 
+    height: 250px;
+  }
+  #ad-slot2 { 
+    height: 250px;
+  }
+	.typewriter h1 { 
+	  color:var(--navbar-color);
+	  -webkit-text-stroke: 1px var(--blackWhite-color); 
+	  font-weight: bold; 
+	  font-size:x-large;
+	  text-align:center;
+	}
+	
+	.sidediv{
+	  position: fixed; 
+	  left: 0%; 
+	  -webkit-transform: translate(0, 7vh);
+	  float:left;
+	  z-index:99999;  
+	  
+	}
+	
+	.navbar li a{
+	  font-size: 2.2vw;
+	  padding-right: 25px;
+	  text-decoration: none;
+	  color: white;
+	}
+	
+	h2{
+    padding: 2rem 1rem;
+    text-align: center;
+    color:var(--buttonBackground-color); 
+	font-size: 2vh;
+    
+}
+	p{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vh;	  
+	}
+
+.navbar{
+	display: none;
+}
+
+.sidenav {
+padding-top: 15px;
+display: block;}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--navbar-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 10px 10px 20px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+  border-bottom: 2px solid var(--buttonBackground-color);;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+}
+@media screen and (min-width:767px){
+	.question textarea {
+	resize: none;
+	padding-top: 10px; 
+	padding-left: 10px; 
+	border-color: #202848;
+	width: 90vw;
+	height: 10vh;
+}
+	.question.textfieldbox {
+	  position: relative;
+	  top: 20vh;
+	  -webkit-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  transform: translateY(-50%);
+	  text-align: center;
+	}
+	
+	.typewriter h1 { 
+	  color:var(--navbar-color); 
+	  -webkit-text-stroke: 1px var(--blackWhite-color); 
+	  font-weight: bold; 
+	  font-size: 7vh;
+	  text-align:center;
+	}
+	.typewriter{
+		margin-top:50px;
+	  }
+	.navbar{
+	  text-align: center; 
+	  background-color: var(--navbar-color);
+	  border-radius: 30px;
+	}
+
+	.navbar ul{
+	  overflow: auto;
+	}
+	.navbar li{
+	  display:inline;
+	  list-style: none; 
+	  padding-right: 45px;
+	}
+	.navbar li:hover{
+	  transition: all 0.3s ease-in-out 0s;
+	  filter: drop-shadow(10px 10px 5px black);
+
+	}
+	.navbar li a{
+	  font-size: 4vh;
+	  text-decoration: none;
+	  color: white;
+	}
+	
+	#ad-slot { 
+    height: 250px;
+  }
+  #ad-slot2 { 
+    height: 250px;
+  }
+	.navbar li a:hover{
+	  list-style-position:inside;
+      border-bottom: 2px solid var(--buttonBackground-color);
+	  color: var(--BlackWhite-color);
+	}
+	.ic:hover{
+	  color: black
+	}
+
+	  
+	.sidediv{
+	  position: fixed; 
+	  left: 0%; 
+	  -webkit-transform: translate(0, 13vh);
+	  float:left;
+	  z-index:99999;  
+	  
+	}
+	h2{
+    padding: 2rem 1rem;
+    text-align: center;
+    color:var(--buttonBackground-color); 
+	font-size: 2vw;
+    
+}
+	p{
+	  padding-right:25px;
+	  padding-left:25px; 
+	  color:var(--BlackWhite-color); 
+	  font-size: 1.4vw;	  
+	}
+	
+	.sidenav{
+	   display:none;
+	 }
+	span{
+	display:none;
+	}
+}
+
+:root{
+  --backgroun-colour: #FAF9F6;
+  --navbar-color: #2E8BC0;
+  --buttonBackground-color: #7EC8E3;
+  --legend-color: #0000FF;
+  --buttonHover-color: #202848;
+  --BlackWhite-color: #000000;
+  --BoxShadow-color: rgba(0,0,0,0.5);
+  --innerTextarea:#ffffff;
+}
+
+.dark-theme{
+  --backgroun-colour: #000000;
+  --navbar-color: #cd2d55;
+  --buttonBackground-color: #e18199;
+  --legend-color: #f0c0cc;
+  --buttonHover-color:  #e696aa;
+  --BlackWhite-color: white;
+  --BoxShadow-color:#2d2c2c;
+  --innerTextarea:#D3D3D3;
+}
+
+html, body {
+  background-size: 2574px 2574px;
+}
+
+
+.textfieldbox {
+  padding-top: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 2em;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+	font-weight:100;
+
+}
+
+
+.answer.textfieldbox{
+  position: relative;
+  top: 60vh;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+
+
+.textfieldbox button, .textfieldbox a.button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:800;
+  background: var(--buttonBackground-color);
+  border: 1px solid #050A30;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 15em;
+  padding: 0.7em;
+  font-size: 70%;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: #050A30;
+  display: inline-block;
+	cursor: pointer;
+}
+.textfieldbox button:hover, .textfieldbox a.button:hover {
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+  text-decoration: none;
+  background-color: #0005;
+  border-color:var(--buttonHover-color);
+	cursor: pointer;
+}
+.question.textfieldbox button:hover, .textfieldbox a.button:hover {
+  color: var(--buttonHover-color);
+}
+.answer.textfieldbox button:hover, .textfieldbox a.button:hover {
+  color: var(--buttonHover-color);
+}
+
+select, text{
+    color: #000000;
+}
+
+text:focus, input:focus {
+    color: #000000;
+}
+input{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: var(--BlackWhite-color);
+}
+
+
+
+#navi{
+  width:100%;
+  height:100vh;
+  background-size: cover;
+}
+
+.ic:hover{
+  color: black;
+}
+
+
+
+
+#myFile {
+  text-align: center;
+  margin: auto;
+}
+
+.question.textfieldbox input:hover{
+	border-top: 1px solid black;
+    border-right: 1px solid black;
+    color: var(--legend-color);
+	font: 5vw;
+}
+
+textarea:focus, input:focus {
+    color: #000000;
+}
+textarea {
+	font-size: 0.75em;
+	background: rgba(255,255,255,0.1);
+	border: none;
+	box-shadow: 0px -5px 10px 0px var(--BoxShadow-color);
+    border-collapse:collapse;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+	border-radius: 5px;
+	backdrop-filter: blur(5px);
+	overflow: hidden;
+	line-height: 1.2;
+    resize: none;
+	overflow-y: scroll;
+	font: 5vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.answer textarea {
+	resize: none;
+	padding-top: 10px; 
+	padding-left: 10px; 
+	border-color: #202848;
+	width: 95vw;
+	height: 40vh;
+}
+input[type="text"], textarea { 
+  background: var(--innerTextarea);
+}
+textarea::placeholder {
+	font: 3vw;
+}
+
+
+
+.typewriter h1 { 
+  text-align:center;
+}
+
+legend {
+  font-size: x-large;
+  color: var(--legend-color);
+  padding: 5px 10px;
+  -webkit-text-stroke: 0px #202848;
+}
+
+#btn{
+	padding-left: 1px;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+.sidediv button {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:100;
+  background: var(--buttonBackground-color);
+  border: 1px solid black;
+  border-radius: 0px 50px 50px 0px; 
+  width: 9em;
+  height: 8em;
+  font-size: 50%;
+  color: #5f0a87;
+  box-shadow: 10px 10px 20px var(--BoxShadow-color);
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidediv img{
+  border-radius: 50px 50px 50px 50px;
+  padding-left: 1em;
+  height:6.5em; 
+  width:6.5em;
+}
+.sidediv img:hover{
+cursor: pointer;
+  box-shadow: 20px 20px 50px var(--BoxShadow-color);
+}
+
+.select #id_select2_example{
+  text-align:center;
+  background:var(--buttonBackground-color);
+  border-radius:10px;
+}
+h1 {
+
+text-align: center;
+}
+p{
+
+text-align: center;
+}
+
+
+</style>
+
+<script>
+	document.onkeydown = function(e) {
+	if(event.keyCode == 123) {
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+	return false;
+	}
+	if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+	return false;
+	}
+	}
+</script>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<script>
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+console.log(width)
+</script>
+
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+</head>
+
+<body translate="no" style="background: var(--backgroun-colour);" oncontextmenu="return false;">
+ <div class="sidediv" title="Dark-Light Mode">
+    <button id="ic"><img src="https://cdn-icons-png.flaticon.com/128/7645/7645197.png" alt="Dark-light Mode" id="img"/></button>
+  </div>
+  
+ <header>
+  <nav class="navbar justify-content-center" style="list-style-position:inside; border-bottom: 2px solid var(--buttonBackground-color);">
+    <ul>
+	<li><a href="/article" title="Article rewriter tool." rel="follow">Article Rewriter</a></li>
+	<li><a href="grammar" title="Grammar Checker/Corrector Tool" rel="follow">Grammar Checker</a></li>
+	<li><a href="code" title="Customised Code generator!">Code Generator</a></li>
+	<li><a href="/blog" title="Generate blog content" rel="follow">Blog Content</a></li>
+	<li><a href="content-create" title="Create tweet, cold emails and essays!" rel="follow">Content Creator</a></li>
+	<li><a href="/wordcounter" title="Count words and sentences" rel="follow">Word Counter</a></li>
+    </ul>
+  </nav>
+  
+   <span style="font-size:30px;cursor:pointer; padding-left:20px; color: var(--BlackWhite-color);" onclick="openNav()">&#9776;</span>
+  <div id="mySidenav" class="sidenav">
+  <a href="/code" class="closebtn" onclick="closeNav()">&times;</a>
+    <ul>
+	<li><a href="/article">Article Rewriter</a></li>
+	<li><a href="grammar">Grammar Checker</a></li>
+	<li><a href="code">Code Generator</a></li>
+	<li><a href="/blog">Blog Content</a></li>
+	<li><a href="content-create">Content Creator</a></li>
+	<li><a href="/wordcounter">Word Counter</a></li>
+	</ul>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+  
+  <div class="typewriter">
+		<h1>Code Generator</h1>
+</div>
+  
+</header>
+
+<br>
+
+<div class='textfieldbox  question'>
+<form id="code" action="code" method="post">  
+<fieldset>
+<label for="txt1" style="font-size: x-large; color: var(--legend-color); padding: 5px 10px; -webkit-text-stroke: 0px #202848;"><strong>Problem statement</strong></label>
+<br>
+<textarea title="Type your problem statement" id="txt1" name="text" rows="2" cols="30" autofocus required  placeholder="  Write the problem statement of code here.">{{sample_input}}</textarea>
+<br>
+<p id="para" style="color:red;">ONLY 500 WORDS AT A TIME ALLOWED</p>
+<div id="counter" style="font-size:15px; color: var(--BlackWhite-color);"></div>
+<script>
+		const messageEle = document.getElementById('txt1');
+		const counterEle = document.getElementById('counter');
+		
+		function onPageLoad() {
+		
+		var text = document.getElementById("txt1").value;
+		const currentLength = text.length;
+        text = text.trim();
+		text = text.replace(/\n+/g,' ');
+		text = text.replace(/  +/g,' ');
+		var numWords = 0;
+		   const myArray = text.split(' ');
+		   console.log("array: "+ myArray);
+			if(text.length === 0){
+			   numWords = 0;
+			   counterEle.innerHTML = `Words Left: ${0}/${500}<br> Characters: ${currentLength}`;
+			}
+			else{
+				let get = document.getElementById('para');
+
+			  if (!get.contains(event.target)) {
+
+			  get.style.display = 'none';
+
+			  }
+			numWords = myArray.length;
+			if(numWords>500){
+			//console.log(text.substring(0, max))
+				console.log("max > 500 ");
+				document.querySelector('textarea').value = myArray.slice(0,500).join(' ');
+				//console.log("max > 500 "+myArray.slice(0,501));
+				counterEle.innerHTML = `Words Left: ${0}/${500}<br> Characters: ${currentLength}`;
+			}
+			else{
+				counterEle.innerHTML = `Words Left: ${500 - numWords}/${500} \(${numWords}\)<br> Characters: ${currentLength}`;
+			}
+		}
+		}
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+		messageEle.addEventListener('input', function (e) {
+		const target = e.target;
+		const currentLength = target.value.length;
+		
+
+        var text = document.getElementById("txt1").value;
+		text = text.trim();
+		text = text.replace(/\n+/g, ' ');
+		text = text.replace(/  +/g,' ');
+		var numWords = 0;
+		const myArray = text.split(' ');
+		console.log("array: "+ myArray);
+		if(text.length === 0){
+			   numWords = 0;
+			   counterEle.innerHTML = `Words Left: ${0}/${500}<br> Characters: ${currentLength}`;
+			}
+		else{
+			 let get = document.getElementById('para');
+
+			  if (!get.contains(event.target)) {
+
+			  get.style.display = 'none';
+
+			  }
+				numWords = myArray.length;
+				if(numWords>500){
+			//console.log(text.substring(0, max))
+				console.log("max > 500 ");
+				document.querySelector('textarea').value = myArray.slice(0,500).join(' ');
+				//console.log("max > 500 "+myArray.slice(0,501));
+				counterEle.innerHTML = `Words Left: ${0}/${500}<br> Characters: ${currentLength}`;
+			}
+			else{
+				counterEle.innerHTML = `Words Left: ${500 - numWords}/${500} \(${numWords}\)<br> Characters: ${currentLength}`;
+			}
+		}
+		});
+		</script>
+<br>
+<div class="select" title="Select desired language">
+	<select name="select" id="id_select2_example" style="color: var(--BlackWhite-color); width: 200px;">
+			<option value="Python">Python</option>
+			<option value="java">Java</option>
+			<option value="c">C</option>
+			<option value="c++">C++</option>
+			<option value="perl">perl</option>
+			<option value="JavaScript">JavaScript</option>
+	</select>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+<script>
+    function custom_template(obj){
+            var data = $(obj.element).data();
+            var text = $(obj.element).text();
+            
+        }
+    var options = {
+        'templateSelection': custom_template,
+        'templateResult': custom_template,
+    }
+    $('#id_select2_example').select2(options);
+    $('.select2-container--default .select2-selection--single').css({'height': '220px'});
+
+</script>
+
+<div class='text-content' id="content">
+<br>
+<button type="submit" value="Submit">Get your Code</button>
+		<script>
+		   function setTextToCurrentPos() {
+                var curPos =
+                    document.getElementById("txt1").selectionStart;
+                console.log(curPos);
+                let x = $("#txt1").val();
+                let text_to_insert = $("#insert").val();
+                $("#txt1").val(x.slice(0, curPos) + text_to_insert + x.slice(curPos));
+            }
+        </script>
+    
+	</div>
+	</fieldset>
+	</form>
+	  
+  </div>
+<br>
+
+<br>
+<div id="ad-slot" style="min-width: 300px; min-height: 250px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;height:250px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="1669768372"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<br>
+<div class='textfieldbox answer'>
+<fieldset>
+<label for="txt2" style="font-size: x-large; color: var(--legend-color); padding: 5px 10px; -webkit-text-stroke: 0px #202848;"><strong>Your Code</strong></label>
+<div id ="navi" class='text-content'>
+		<pre><code><textarea id="txt2" name="text2" rows="50" cols="30">{{sample_output|safe}} </textarea></code></pre>
+<br>
+<div id="ad-slot2" title="Google Ads" >
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1232231269139427"
+     crossorigin="anonymous"></script>
+<!-- Unit2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1232231269139427"
+     data-ad-slot="2903092443"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br>
+<br>
+<h2><strong>What is Code Generator Tool?</strong></h2>
+<p>A code generator is a tool that helps you to generate your desire code. This tool generate code based on problem statement given. This tool gives optimal solution.</p>
+<br>
+<h2><strong>How to Use This Tool?</strong></h2>
+<p> Type the problem statement in the textarea given. After that select the language you want your code in, from drop down menu. Then click on button Get your Code to get the desired code. The answer is in the textarea below.</p>
+<br>
+<h2><strong>What if I don't get correct result?</strong></h2>
+<p>If your characters are more than 200 or 500 and you are not getting proper result, try to minimize the characters for question. And if result is not proper, then problem statement migh be difficult to convert.</p>
+<br>
+<h2><strong>How to choose best code creater Tool?</strong></h2>
+<p>A code creator tool is a powerful tool that can help you create custom code for your problem statement. It can also help you troubleshoot code problems and improve your site's performance. This tool can be used by developers of all skill levels. The code creator tool is very user-friendly. Simply enter the problem statements, select the language you want to get result in, and click "Create Code." The tool will then generate the code for you.</p>
+<br>
+<h2><strong>What is OpenAI?</strong></h2>
+<p>Our websites <a href="https://tools.gunz-tools.com/" rel="nofollow">Article Rewriter</a>, <a href="https://tools.gunz-tools.com/grammar" rel="nofollow">Grammar Checker</a>, <a href="https://tools.gunz-tools.com/code" rel="nofollow">Code Generator</a> and <a href="https://tools.gunz-tools.com/content-create" rel="nofollow">Content Create</a> are based on <a href="https://openai.com/about/" rel="nofollow">OpenAI</a> technology.<br><strong><a href="https://openai.com/about/" rel="nofollow">OpenAI</a></strong> is an <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" rel="nofollow">Artificial Intelligence (AI)</a> research laboratory consisting of the for-profit corporation OpenAI LP and its parent company, the non-profit <strong>OpenAI Inc</strong>. The company conducts research in the field of AI with the stated goal of promoting and developing friendly AI in a way that benefits humanity as a whole</p>
+<br>
+<br>
+</div>
+</fieldset>
+</div>
+<script>
+  var ic= document.getElementById("ic");
+  ic.addEventListener('click', () =>{
+	document.body.classList.toggle("dark-theme");
+	if(document.body.classList.contains("dark-theme")){
+	 localStorage.setItem('darkMode', 'enabled');
+	 img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+	else{
+	  localStorage.setItem('darkMode', 'disabled');
+	  img.src = "https://cdn-icons-png.flaticon.com/128/7645/7645197.png";
+	  }
+	});
+if(localStorage.getItem('darkMode') == 'enabled'){
+    document.body.classList.toggle('dark-theme');
+	img.src = "https://cdn-icons-png.flaticon.com/512/5261/5261958.png";
+	}
+</script>
+</body>
+
+</html>
